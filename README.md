@@ -18,6 +18,8 @@ The sidebar is intentionally simple: create projects, add pages, rename them, de
 - Secure, long-lived login cookies and basic per-IP throttling.
 - No external account or third-party service is required.
 
+https://github.com/user-attachments/assets/4c08289f-adf3-4c8a-b282-27a0c0085528
+
 ## Run locally with SQLite
 
 This is the easiest way to try the project. Node.js 22 or newer is recommended.
