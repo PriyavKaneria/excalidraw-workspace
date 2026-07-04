@@ -1,0 +1,24 @@
+services:
+  draw:
+    build: .
+    restart: unless-stopped
+    environment:
+      STORAGE_BACKEND: postgres
+      DATABASE_URL: postgres://draw:${POSTGRES_PASSWORD}@db:5432/draw
+      DRAW_PASSWORD: ${DRAW_PASSWORD}
+      SESSION_SECRET: ${SESSION_SECRET}
+    depends_on: [db]
+    networks: [default,app-network]
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: draw
+      POSTGRES_USER: draw
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: [draw_db:/var/lib/postgresql/data,./init.sql:/docker-entrypoint-initdb.d/init.sql:ro]
+networks:
+  app-network:
+    external: true
+volumes:
+  draw_db:

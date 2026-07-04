@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@500;700;800&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Nunito, system-ui;
+  background: #f8f5ed;
+}
+.shell {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 278px minmax(0, 1fr);
+  overflow: hidden;
+}
+.shell.collapsed {
+  grid-template-columns: 34px minmax(0, 1fr);
+}
+aside {
+  background: #fffdf7;
+  border-right: 2px solid #252525;
+  padding: 16px 13px;
+  overflow: auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 5px 0 0 #f0c951;
+}
+.collapse {
+  position: absolute;
+  right: 4px;
+  top: 6px;
+  border: 0;
+  background: transparent;
+  font: 28px "Patrick Hand";
+  cursor: pointer;
+}
+.brand {
+  border-bottom: 2px dashed #252525;
+  padding: 2px 4px 14px;
+  margin-bottom: 13px;
+}
+.brand span {
+  color: #e65142;
+  font-size: 22px;
+}
+.brand h1 {
+  font: 26px "Patrick Hand";
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+.brand em {
+  font: 14px "Patrick Hand";
+  color: #596273;
+}
+.add {
+  border: 2px solid #252525;
+  border-radius: 8px;
+  background: #f0c951;
+  padding: 8px 10px;
+  font: 18px "Patrick Hand";
+  cursor: pointer;
+  box-shadow: 2px 2px #252525;
+}
+.project {
+  width: 100%;
+  text-align: left;
+}
+section {
+  padding: 15px 2px 4px;
+  border-bottom: 2px dashed #d6d0c1;
+}
+section h2 {
+  font: 700 12px Nunito;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #687082;
+  margin: 0 0 7px 7px;
+}
+.page-row {
+  display: grid;
+  grid-template-columns: 1fr 26px 22px;
+  align-items: center;
+  border-radius: 7px;
+  margin: 2px 0;
+}
+.page-row:hover {
+  background: #edf2fb;
+}
+.page-row.active {
+  background: #d9e9ff;
+  outline: 1.5px solid #252525;
+}
+.page-row button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.page {
+  font: 17px "Patrick Hand";
+  padding: 7px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page i {
+  font-style: normal;
+  color: #a4a4a4;
+  margin-right: 6px;
+}
+.page-row > button:not(.page) {
+  font: 17px "Patrick Hand";
+  color: #677;
+}
+.page-add {
+  margin: 7px 5px;
+  background: none;
+  border: 0;
+  color: #506fa8;
+  box-shadow: none;
+  font-size: 16px;
+}
+.canvas {
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+}
+.canvas > .excalidraw {
+  height: 100%;
+  width: 100%;
+}
+.loading,
+.canvas-error {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font: 24px "Patrick Hand";
+  background: #fffdf7;
+  color: #313131;
+}
+.canvas-error {
+  color: #ad392f;
+}
+.login {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: repeating-linear-gradient(
+    0deg,
+    #fffdf7,
+    #fffdf7 29px,
+    #e5e9ef 30px
+  );
+}
+.paper {
+  width: 360px;
+  padding: 34px;
+  text-align: center;
+  background: #fffdf7;
+  border: 2px solid #252525;
+  box-shadow: 8px 8px #f0c951;
+}
+.paper span {
+  font-size: 30px;
+  color: #e65142;
+}
+.paper h1 {
+  font: 36px "Patrick Hand";
+  margin: 5px;
+}
+.paper p {
+  font: 18px "Patrick Hand";
+  color: #687082;
+}
+.paper input,
+.paper button {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+  border: 2px solid #252525;
+  font: 18px "Patrick Hand";
+}
+.paper button {
+  background: #f0c951;
+  cursor: pointer;
+}
+.paper small {
+  display: block;
+  color: #ad392f;
+  margin-top: 8px;
+}
